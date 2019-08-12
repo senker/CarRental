@@ -70,7 +70,7 @@ public class AddCarMenuState extends CarMenuState {
 
         System.out.println("Enter car deposit:");
         float tCarDeposit = checkIfEmptyAndFloat("Enter car deposit:");
-
+        
         return new Car(tRegNumber,tCarBrand,tCarModel,tYearOfProduction,tGearBoxType,tNumberOfDoors,tEngineCapavity,tFuelType,tCarColor,tCarDescription,tCarPrice,tCarDeposit);
     
     }
