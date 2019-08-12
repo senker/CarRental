@@ -16,7 +16,6 @@ D:\University\AND1\ANDRestaurant\CarRental\Source Code\BusinessLogic\CarRental\C
 D:\University\AND1\ANDRestaurant\CarRental\Source Code\BusinessLogic\CarRental\CarRental\obj\Debug\netcoreapp2.2\CarRental.RazorCoreGenerate.cache
 D:\University\AND1\ANDRestaurant\CarRental\Source Code\BusinessLogic\CarRental\CarRental\obj\Debug\netcoreapp2.2\Razor\Pages\Error.g.cshtml.cs
 D:\University\AND1\ANDRestaurant\CarRental\Source Code\BusinessLogic\CarRental\CarRental\obj\Debug\netcoreapp2.2\Razor\Pages\Index.g.cshtml.cs
-D:\University\AND1\ANDRestaurant\CarRental\Source Code\BusinessLogic\CarRental\CarRental\obj\Debug\netcoreapp2.2\Razor\Pages\Privacy.g.cshtml.cs
 D:\University\AND1\ANDRestaurant\CarRental\Source Code\BusinessLogic\CarRental\CarRental\obj\Debug\netcoreapp2.2\Razor\Pages\Shared\_CookieConsentPartial.g.cshtml.cs
 D:\University\AND1\ANDRestaurant\CarRental\Source Code\BusinessLogic\CarRental\CarRental\obj\Debug\netcoreapp2.2\Razor\Pages\Shared\_Layout.g.cshtml.cs
 D:\University\AND1\ANDRestaurant\CarRental\Source Code\BusinessLogic\CarRental\CarRental\obj\Debug\netcoreapp2.2\Razor\Pages\Shared\_ValidationScriptsPartial.g.cshtml.cs
@@ -28,3 +27,4 @@ D:\University\AND1\ANDRestaurant\CarRental\Source Code\BusinessLogic\CarRental\C
 D:\University\AND1\ANDRestaurant\CarRental\Source Code\BusinessLogic\CarRental\CarRental\obj\Debug\netcoreapp2.2\CarRental.dll
 D:\University\AND1\ANDRestaurant\CarRental\Source Code\BusinessLogic\CarRental\CarRental\obj\Debug\netcoreapp2.2\CarRental.pdb
 D:\University\AND1\ANDRestaurant\CarRental\Source Code\BusinessLogic\CarRental\CarRental\obj\Debug\netcoreapp2.2\CarRental.csproj.CopyComplete
+D:\University\AND1\ANDRestaurant\CarRental\Source Code\BusinessLogic\CarRental\CarRental\obj\Debug\netcoreapp2.2\Razor\Pages\CarList\Car.g.cshtml.cs
