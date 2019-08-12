@@ -30,7 +30,7 @@ public class GetCarMenuState extends CarMenuState {
 
     private Car findCar(String plates) {
         for (Car car: cars) {
-            if (car.plates.equals(plates))
+            if (car.getRegNumber().equals(plates))
                 return car;
         }
 
