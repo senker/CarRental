@@ -17,7 +17,7 @@ public class AddCarMenuState extends CarMenuState {
         }
         
       
-        
+        cars.add(inputCarInfo()); 
         return "";
     }
     
@@ -47,7 +47,6 @@ public class AddCarMenuState extends CarMenuState {
         String tCarPrice = keyInput.nextLine();
         System.out.println("Enter car deposit:");
         String tCarDeposit = keyInput.nextLine();
-        currentState = states.get(1);
         return new Car(tRegNumber,tCarBrand,tCarModel,tYearOfProduction,tGearBoxType,tNumberOfDoors,tEngineCapavity,tFuelType,tCarColor,tCarDescription,Float.parseFloat(tCarPrice),Float.parseFloat(tCarDeposit));
     
     }
@@ -56,9 +55,7 @@ public class AddCarMenuState extends CarMenuState {
 
     @Override
     public String init() 
-    {
-    	cars.add(inputCarInfo());   
-    	return "CAR ADDED SUCCESSFULLY TO THE SYSTEM!";
-        
+    {  
+    	return "Press 'ENTER' to input information for new car or type 'back' to return in the previous menu";
     }
 }
