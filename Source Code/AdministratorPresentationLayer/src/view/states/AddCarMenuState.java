@@ -18,7 +18,7 @@ public class AddCarMenuState extends CarMenuState {
         
       
         cars.add(inputCarInfo()); 
-        return "";
+        return "CAR WAS ADDED SUCCESSFULLY TO THE SYSTEM!";
     }
     
     public Car inputCarInfo()
