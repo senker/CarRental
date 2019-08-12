@@ -70,7 +70,7 @@ public class AddCarMenuState extends CarMenuState {
 
         System.out.println("Enter car deposit:");
         float tCarDeposit = checkIfEmptyAndFloat("Enter car deposit:");
-        
+
         return new Car(tRegNumber,tCarBrand,tCarModel,tYearOfProduction,tGearBoxType,tNumberOfDoors,tEngineCapavity,tFuelType,tCarColor,tCarDescription,tCarPrice,tCarDeposit);
     
     }
@@ -86,7 +86,7 @@ public class AddCarMenuState extends CarMenuState {
         }
     }
 
-    public float checkIfEmptyAndFloat(String s)
+    public float checkIfEmptyAndFloat(String s)   // Since "" is also not a float, while verifying if it matches the data type it will also check if it is empty
     {
         float f;
         do {
