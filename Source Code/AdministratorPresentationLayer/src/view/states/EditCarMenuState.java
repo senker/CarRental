@@ -2,68 +2,92 @@ package view.states;
 
 import Model.Car;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class AddCarMenuState extends CarMenuState {
-    
-	Scanner keyInput = new Scanner(System.in);
-	
-	@Override
-    public String handle(String input) 
-    {
-        if (input.equals("back"))
-        {
+public class EditCarMenuState extends CarMenuState {
+    Scanner keyInput = new Scanner(System.in);
+    @Override
+    public String handle(String input) {
+//        switch (input) {
+//            case "back":
+//                currentState = states.get(1);
+//                return "";
+//            case "all":
+
+////                StringBuilder allCarsInfoStringBuilder = new StringBuilder();
+////                cars.forEach((car) -> allCarsInfoStringBuilder.append("\n").append(car.toString()));
+////                return allCarsInfoStringBuilder.toString();
+//        }
+        if (input.equals("back")) {
             currentState = states.get(1);
-            return "";
         }
-        
-      
-        cars.add(inputCarInfo()); 
-        return "CAR WAS ADDED SUCCESSFULLY TO THE SYSTEM!";
+
+        Car carSearchResult = findCar(input);
+
+        if (carSearchResult == null) {
+            currentState = states.get(1);
+            return "No car with such plates is registered";
+        }
+        else {
+            carSearchResult = editCar();
+            currentState = states.get(1);
+            return "Car has been edited!";
+        }
+        }
+
+    @Override
+    public String init() {
+        return "Enter car plates or enter 'all' to print information about all registered cars";
     }
-    
-    public Car inputCarInfo()
+
+    private Car findCar(String plates) {
+        for (Car car: cars) {
+            if (car.getRegNumber().equals(plates))
+                return car;
+        }
+
+        return null;
+    }
+    private Car editCar()
     {
-    	System.out.println("Enter registration number:");
+        System.out.println("Enter registration number:");
         String tRegNumber = keyInput.nextLine();
-        checkIfEmpty(tRegNumber,"Enter registration number:");
+
 
         System.out.println("Enter car brand:");
         String tCarBrand = keyInput.nextLine();
-        checkIfEmpty(tCarBrand,"Enter car brand:");
+
 
         System.out.println("Enter car model:");
         String tCarModel = keyInput.nextLine();
-        checkIfEmpty(tCarModel,"Enter car model:");
+
 
         System.out.println("Enter year of production:");
         String tYearOfProduction = keyInput.nextLine();
-        checkIfEmpty(tYearOfProduction,"Enter year of production:");
+
 
         System.out.println("Enter gear box type:");
         String tGearBoxType = keyInput.nextLine();
-        checkIfEmpty(tGearBoxType,"Enter gear box type:");
+
 
         System.out.println("Enter number of doors:");
         String tNumberOfDoors = keyInput.nextLine();
-        checkIfEmpty(tNumberOfDoors,"Enter number of doors:");
 
         System.out.println("Enter engine capacity:");
         String tEngineCapavity = keyInput.nextLine();
-        checkIfEmpty(tEngineCapavity,"Enter engine capacity:");
+
 
         System.out.println("Enter fuel type:");
         String tFuelType = keyInput.nextLine();
-        checkIfEmpty(tFuelType,"Enter fuel type:");
+
 
         System.out.println("Enter car color:");
         String tCarColor = keyInput.nextLine();
-        checkIfEmpty(tCarColor,"Enter car color:");
+
 
         System.out.println("Enter car description:");
         String tCarDescription = keyInput.nextLine();
-        checkIfEmpty(tCarDescription,"Enter car description:");
+
 
         System.out.println("Enter car price:");
         float tCarPrice = checkIfEmptyAndFloat("Enter car price:");
@@ -72,18 +96,7 @@ public class AddCarMenuState extends CarMenuState {
         float tCarDeposit = checkIfEmptyAndFloat("Enter car deposit:");
 
         return new Car(tRegNumber,tCarBrand,tCarModel,tYearOfProduction,tGearBoxType,tNumberOfDoors,tEngineCapavity,tFuelType,tCarColor,tCarDescription,tCarPrice,tCarDeposit);
-    
-    }
-    public void checkIfEmpty(String s, String requirement)
-    {
-        String temp="";
-        if(s.equals(""))
-        {
-            System.out.println("Please " +requirement.toLowerCase());
-            temp = keyInput.nextLine();
-            s=temp;
-            checkIfEmpty(s,requirement);
-        }
+
     }
 
     public float checkIfEmptyAndFloat(String s)   // Since "" is also not a float, while verifying if it matches the data type it will also check if it is empty
@@ -103,12 +116,5 @@ public class AddCarMenuState extends CarMenuState {
         return f;
     }
 
-    
-  
-
-    @Override
-    public String init() 
-    {  
-    	return "Press 'ENTER' to input information for new car or type 'back' to return in the previous menu";
-    }
 }
+
