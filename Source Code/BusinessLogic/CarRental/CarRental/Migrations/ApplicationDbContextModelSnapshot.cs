@@ -24,6 +24,8 @@ namespace CarRental.Migrations
                     b.Property<string>("registrationNumber")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<bool>("available");
+
                     b.Property<string>("carBrand")
                         .IsRequired();
 
@@ -72,6 +74,8 @@ namespace CarRental.Migrations
                     b.Property<string>("driverLicenseId")
                         .IsRequired();
 
+                    b.Property<DateTime>("endPeriod");
+
                     b.Property<string>("firstName")
                         .IsRequired();
 
@@ -84,6 +88,10 @@ namespace CarRental.Migrations
                     b.Property<string>("phoneNumber")
                         .IsRequired();
 
+                    b.Property<int>("requestedCar");
+
+                    b.Property<DateTime>("startPeriod");
+
                     b.HasKey("socialSecurityNumber");
 
                     b.ToTable("Customer");
@@ -93,22 +101,11 @@ namespace CarRental.Migrations
                 {
                     b.Property<DateTime>("startDate");
 
-                    b.Property<string>("CarregistrationNumber");
-
                     b.Property<DateTime>("endDate");
 
                     b.HasKey("startDate");
 
-                    b.HasIndex("CarregistrationNumber");
-
                     b.ToTable("TimePeriod");
-                });
-
-            modelBuilder.Entity("CarRental.Model.TimePeriod", b =>
-                {
-                    b.HasOne("CarRental.Model.Car")
-                        .WithMany("timePeriod")
-                        .HasForeignKey("CarregistrationNumber");
                 });
 #pragma warning restore 612, 618
         }

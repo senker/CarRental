@@ -28,3 +28,4 @@ D:\University\AND1\ANDRestaurant\CarRental\Source Code\BusinessLogic\CarRental\C
 D:\University\AND1\ANDRestaurant\CarRental\Source Code\BusinessLogic\CarRental\CarRental\obj\Debug\netcoreapp2.2\CarRental.pdb
 D:\University\AND1\ANDRestaurant\CarRental\Source Code\BusinessLogic\CarRental\CarRental\obj\Debug\netcoreapp2.2\CarRental.csproj.CopyComplete
 D:\University\AND1\ANDRestaurant\CarRental\Source Code\BusinessLogic\CarRental\CarRental\obj\Debug\netcoreapp2.2\Razor\Pages\CarList\Car.g.cshtml.cs
+D:\University\AND1\ANDRestaurant\CarRental\Source Code\BusinessLogic\CarRental\CarRental\obj\Debug\netcoreapp2.2\Razor\Pages\CustomerList\Customer.g.cshtml.cs

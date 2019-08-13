@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CarRental.Migrations
 {
-    public partial class AddCarCustomerTimePeriodToDatabase : Migration
+    public partial class addCarCustomerTimeToDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -22,7 +22,8 @@ namespace CarRental.Migrations
                     carColor = table.Column<string>(nullable: false),
                     carDescription = table.Column<string>(nullable: false),
                     carPrice = table.Column<float>(nullable: false),
-                    carDeposit = table.Column<float>(nullable: false)
+                    carDeposit = table.Column<float>(nullable: false),
+                    available = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -40,7 +41,10 @@ namespace CarRental.Migrations
                     address = table.Column<string>(nullable: false),
                     phoneNumber = table.Column<string>(nullable: false),
                     nationality = table.Column<string>(nullable: false),
-                    driverLicenseId = table.Column<string>(nullable: false)
+                    driverLicenseId = table.Column<string>(nullable: false),
+                    startPeriod = table.Column<DateTime>(nullable: false),
+                    endPeriod = table.Column<DateTime>(nullable: false),
+                    requestedCar = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -52,36 +56,24 @@ namespace CarRental.Migrations
                 columns: table => new
                 {
                     startDate = table.Column<DateTime>(nullable: false),
-                    endDate = table.Column<DateTime>(nullable: false),
-                    CarregistrationNumber = table.Column<string>(nullable: true)
+                    endDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TimePeriod", x => x.startDate);
-                    table.ForeignKey(
-                        name: "FK_TimePeriod_Car_CarregistrationNumber",
-                        column: x => x.CarregistrationNumber,
-                        principalTable: "Car",
-                        principalColumn: "registrationNumber",
-                        onDelete: ReferentialAction.Restrict);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_TimePeriod_CarregistrationNumber",
-                table: "TimePeriod",
-                column: "CarregistrationNumber");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Car");
+
+            migrationBuilder.DropTable(
                 name: "Customer");
 
             migrationBuilder.DropTable(
                 name: "TimePeriod");
-
-            migrationBuilder.DropTable(
-                name: "Car");
         }
     }
 }
