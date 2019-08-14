@@ -15,7 +15,7 @@ namespace CarRental.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
+                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -40,8 +40,6 @@ namespace CarRental.Migrations
 
                     b.Property<float>("carPrice");
 
-                    b.Property<DateTime>("dateOfProduction");
-
                     b.Property<string>("engineCapacity")
                         .IsRequired();
 
@@ -52,6 +50,9 @@ namespace CarRental.Migrations
                         .IsRequired();
 
                     b.Property<string>("numberOfDoors")
+                        .IsRequired();
+
+                    b.Property<string>("yearOfProduction")
                         .IsRequired();
 
                     b.HasKey("registrationNumber");
@@ -93,22 +94,11 @@ namespace CarRental.Migrations
                 {
                     b.Property<DateTime>("startDate");
 
-                    b.Property<string>("CarregistrationNumber");
-
                     b.Property<DateTime>("endDate");
 
                     b.HasKey("startDate");
 
-                    b.HasIndex("CarregistrationNumber");
-
                     b.ToTable("TimePeriod");
-                });
-
-            modelBuilder.Entity("CarRental.Model.TimePeriod", b =>
-                {
-                    b.HasOne("CarRental.Model.Car")
-                        .WithMany("timePeriod")
-                        .HasForeignKey("CarregistrationNumber");
                 });
 #pragma warning restore 612, 618
         }

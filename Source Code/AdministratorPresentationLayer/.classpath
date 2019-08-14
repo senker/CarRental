@@ -8,5 +8,9 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jdk-12.0.2/lib/json-simple-1.1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/DUNAI/Downloads/gson-2.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DUNAI/Downloads/commons-logging-1.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DUNAI/Downloads/httpclient-4.5.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DUNAI/Downloads/httpcore-4.4.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DUNAI/Downloads/postgresql-42.2.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

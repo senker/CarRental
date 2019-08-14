@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using CarRental.Model;
@@ -13,7 +14,11 @@ namespace CarRental.Pages.CarList
     {
         private readonly ApplicationDbContext _db;
 
+        [BindProperty]
+        [DataType(DataType.Date)]
+        public IndexModel StartDate { get; set; }
 
+        
 
         public CarModel(ApplicationDbContext db)
         {
@@ -25,6 +30,7 @@ namespace CarRental.Pages.CarList
         public async Task OnGet()
         {
             Cars = await _db.Car.ToListAsync();
+            
         }
     }
 }

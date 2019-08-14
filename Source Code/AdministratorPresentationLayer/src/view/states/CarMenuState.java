@@ -15,6 +15,8 @@ public class CarMenuState extends MenuState {
                 return "";
             case "2": currentState = states.get(3);
             	return "";
+            case "4": currentState = states.get(4);
+            	return "";
             case "back": currentState = states.get(0);
                 return "";
             default:

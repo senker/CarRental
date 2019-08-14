@@ -2,11 +2,11 @@ package Model;
 
 public class Car 
 {
-	private String regNumber;
+	private String registrationNumber;
 	private String carBrand;
 	private String carModel;
 	private String yearOfProduction;
-	private String gearBoxType;
+	private String gearboxType;
 	private String numberOfDoors;
 	private String engineCapacity;
 	private String fuelType;
@@ -17,15 +17,15 @@ public class Car
 	
 	
 
-	public Car(String regNumber, String carBrand, String carModel, String yearOfProduction, String gearBoxType,
+	public Car(String registrationNumber, String carBrand, String carModel, String yearOfProduction, String gearBoxType,
 			String numberOfDoors, String engineCapacity, String fuelType, String carColor, String carDescription,
 			float carPrice, float carDeposit) 
 	{
-		this.regNumber = regNumber;
+		this.registrationNumber = registrationNumber;
 		this.carBrand = carBrand;
 		this.carModel = carModel;
 		this.yearOfProduction = yearOfProduction;
-		this.gearBoxType = gearBoxType;
+		this.gearboxType = gearBoxType;
 		this.numberOfDoors = numberOfDoors;
 		this.engineCapacity = engineCapacity;
 		this.fuelType = fuelType;
@@ -36,11 +36,11 @@ public class Car
 	}
 
 	public String getRegNumber() {
-		return regNumber;
+		return registrationNumber;
 	}
 
     public void setRegNumber(String regNumber) {
-        this.regNumber = regNumber;
+        this.registrationNumber = regNumber;
     }
 
     public String getCarBrand() {
@@ -59,20 +59,16 @@ public class Car
 		this.carModel = carModel;
 	}
 
-	public String yearOfProduction() {
-		return yearOfProduction;
-	}
-
 	public void setDateOfProduction(String yearOfProduction) {
-		this.yearOfProduction = yearOfProduction();
+		this.yearOfProduction = yearOfProduction;
 	}
 
 	public String getGearBoxType() {
-		return gearBoxType;
+		return gearboxType;
 	}
 
 	public void setGearBoxType(String gearBoxType) {
-		this.gearBoxType = gearBoxType;
+		this.gearboxType = gearBoxType;
 	}
 
 	public String getNumberOfDoors() {
@@ -133,5 +129,10 @@ public class Car
 
     public String getYearOfProduction() {
         return yearOfProduction;
+    }
+    @Override
+    public String toString() 
+    {
+    	return this.getRegNumber() + " -*-*- " + this.getCarBrand() + " -*-*- " + this.getCarModel() + " -*-*- " + this.getYearOfProduction() + " -*-*- " + this.getGearBoxType();
     }
 }

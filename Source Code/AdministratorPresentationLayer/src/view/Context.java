@@ -22,7 +22,7 @@ public class Context extends MenuState {
         states.add(new CarMenuState());			//1
         states.add(new AddCarMenuState());		//2
         states.add(new GetCarMenuState());		//3
-        
+        states.add(new DeleteCarMenuState());   //4
         //states.add(new CustomerMenuState());	//4
         //states.add(new AddCustomerMenuState());	//5
 

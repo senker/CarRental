@@ -20,8 +20,8 @@ namespace CarRental.Model
         [Display(Name = "Car Brand")]
         public string carBrand { get; set; }
         [Required]
-        [Display(Name = "Production Date")]
-        public DateTime dateOfProduction { get; set; }
+        [Display(Name = "Production Year")]
+        public string yearOfProduction { get; set; }
         [Required]
         [Display(Name = "Gearbox Type")]
         public string gearboxType { get; set; }
@@ -46,8 +46,7 @@ namespace CarRental.Model
         [Required]
         [Display(Name = "Car Deposit")]
         public float carDeposit { get; set; }
-        [Required]
-        public List<TimePeriod> timePeriod { get; set; }
+
 
     }
 }

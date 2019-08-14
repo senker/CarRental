@@ -4,16 +4,14 @@ using CarRental.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CarRental.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190812134625_AddCarCustomerTimePeriodToDatabase")]
-    partial class AddCarCustomerTimePeriodToDatabase
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,6 +23,8 @@ namespace CarRental.Migrations
                 {
                     b.Property<string>("registrationNumber")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("available");
 
                     b.Property<string>("carBrand")
                         .IsRequired();
@@ -42,8 +42,6 @@ namespace CarRental.Migrations
 
                     b.Property<float>("carPrice");
 
-                    b.Property<DateTime>("dateOfProduction");
-
                     b.Property<string>("engineCapacity")
                         .IsRequired();
 
@@ -54,6 +52,9 @@ namespace CarRental.Migrations
                         .IsRequired();
 
                     b.Property<string>("numberOfDoors")
+                        .IsRequired();
+
+                    b.Property<string>("yearOfProduction")
                         .IsRequired();
 
                     b.HasKey("registrationNumber");
@@ -86,31 +87,11 @@ namespace CarRental.Migrations
                     b.Property<string>("phoneNumber")
                         .IsRequired();
 
+                    b.Property<string>("requestedCar");
+
                     b.HasKey("socialSecurityNumber");
 
                     b.ToTable("Customer");
-                });
-
-            modelBuilder.Entity("CarRental.Model.TimePeriod", b =>
-                {
-                    b.Property<DateTime>("startDate");
-
-                    b.Property<string>("CarregistrationNumber");
-
-                    b.Property<DateTime>("endDate");
-
-                    b.HasKey("startDate");
-
-                    b.HasIndex("CarregistrationNumber");
-
-                    b.ToTable("TimePeriod");
-                });
-
-            modelBuilder.Entity("CarRental.Model.TimePeriod", b =>
-                {
-                    b.HasOne("CarRental.Model.Car")
-                        .WithMany("timePeriod")
-                        .HasForeignKey("CarregistrationNumber");
                 });
 #pragma warning restore 612, 618
         }

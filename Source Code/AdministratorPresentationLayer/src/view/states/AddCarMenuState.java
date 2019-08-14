@@ -2,11 +2,14 @@ package view.states;
 
 import Model.Car;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import HTTP_Requests.HttpURLConnectionExample;
+
 public class AddCarMenuState extends CarMenuState {
-    
+	HttpURLConnectionExample http = new HttpURLConnectionExample();
 	Scanner keyInput = new Scanner(System.in);
 	
 	@Override
@@ -19,7 +22,13 @@ public class AddCarMenuState extends CarMenuState {
         }
         
       
-        cars.add(inputCarInfo()); 
+        try 
+        {
+			http.PostCar(inputCarInfo());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         return "CAR WAS ADDED SUCCESSFULLY TO THE SYSTEM!";
     }
     
@@ -74,6 +83,7 @@ public class AddCarMenuState extends CarMenuState {
         return new Car(tRegNumber,tCarBrand,tCarModel,tYearOfProduction,tGearBoxType,tNumberOfDoors,tEngineCapavity,tFuelType,tCarColor,tCarDescription,tCarPrice,tCarDeposit);
     
     }
+    
     public void checkIfEmpty(String s, String requirement)
     {
         String temp="";
