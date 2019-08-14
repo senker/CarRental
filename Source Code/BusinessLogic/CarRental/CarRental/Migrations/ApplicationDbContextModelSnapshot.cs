@@ -24,6 +24,8 @@ namespace CarRental.Migrations
                     b.Property<string>("registrationNumber")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<bool>("available");
+
                     b.Property<string>("carBrand")
                         .IsRequired();
 
@@ -73,6 +75,8 @@ namespace CarRental.Migrations
                     b.Property<string>("driverLicenseId")
                         .IsRequired();
 
+                    b.Property<DateTime>("endPeriod");
+
                     b.Property<string>("firstName")
                         .IsRequired();
 
@@ -84,6 +88,10 @@ namespace CarRental.Migrations
 
                     b.Property<string>("phoneNumber")
                         .IsRequired();
+
+                    b.Property<int>("requestedCar");
+
+                    b.Property<DateTime>("startPeriod");
 
                     b.HasKey("socialSecurityNumber");
 
