@@ -1,0 +1,106 @@
+﻿@page
+@model CarRental.Pages.CarList.ViewCarsModel
+@{
+    ViewData["Title"] = "ViewCars";
+}
+
+<h2>
+    Car list offered from our company:
+
+</h2>
+
+@if (Model.Cars.Count() > 0)
+{
+    <br /><br />
+    <table class="table table-striped border">
+        <tr class="table-secondary">
+            <th>
+                @Html.DisplayNameFor(m => m.Cars.FirstOrDefault().registrationNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Cars.FirstOrDefault().carModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Cars.FirstOrDefault().carBrand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Cars.FirstOrDefault().yearOfProduction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Cars.FirstOrDefault().gearboxType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Cars.FirstOrDefault().numberOfDoors)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Cars.FirstOrDefault().engineCapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Cars.FirstOrDefault().fuelType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Cars.FirstOrDefault().carColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Cars.FirstOrDefault().carDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Cars.FirstOrDefault().carPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Cars.FirstOrDefault().carDeposit)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.Cars)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => item.registrationNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.carModel)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.carBrand)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.yearOfProduction)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.gearboxType)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.numberOfDoors)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.engineCapacity)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.fuelType)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.carColor)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.carDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.carPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.carDeposit)
+                </td>
+                <td>
+                    <a asp-route-id="@item.registrationNumber" asp-page="../Requests/CreateRequest" class="btn btn-success btn-sm">Reserve</a>
+                </td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>
+        No cars available at the moment, please try again in a few days or contact our manager at +45 00011111
+    </p>
+}
