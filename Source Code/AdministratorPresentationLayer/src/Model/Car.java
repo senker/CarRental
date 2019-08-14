@@ -38,8 +38,12 @@ public class Car
 	public String getRegNumber() {
 		return regNumber;
 	}
-	
-	public String getCarBrand() {
+
+    public void setRegNumber(String regNumber) {
+        this.regNumber = regNumber;
+    }
+
+    public String getCarBrand() {
 		return carBrand;
 	}
 
@@ -126,6 +130,8 @@ public class Car
 	public void setCarDeposit(float carDeposit) {
 		this.carDeposit = carDeposit;
 	}
-	
-	
+
+    public String getYearOfProduction() {
+        return yearOfProduction;
+    }
 }

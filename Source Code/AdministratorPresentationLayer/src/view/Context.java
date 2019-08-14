@@ -21,7 +21,7 @@ public class Context extends MenuState {
         states.add(new MainMenuState());		//0
         states.add(new CarMenuState());			//1
         states.add(new AddCarMenuState());		//2
-        //states.add(new GetCarMenuState());		//2
+        states.add(new GetCarMenuState());		//3
         
         //states.add(new CustomerMenuState());	//4
         //states.add(new AddCustomerMenuState());	//5

@@ -13,6 +13,8 @@ public class CarMenuState extends MenuState {
         switch (input){
             case "1": currentState = states.get(2);
                 return "";
+            case "2": currentState = states.get(3);
+            	return "";
             case "back": currentState = states.get(0);
                 return "";
             default:
