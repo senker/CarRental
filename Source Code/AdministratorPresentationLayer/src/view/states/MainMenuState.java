@@ -8,6 +8,9 @@ public class MainMenuState extends MenuState {
             case "1":
                 currentState = states.get(1);
                 return "";
+            case "2":
+            	currentState = states.get(5);
+            	return "";
             
             default: return "no such option is available";
         }

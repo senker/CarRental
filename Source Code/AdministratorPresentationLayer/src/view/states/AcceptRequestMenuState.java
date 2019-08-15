@@ -1,9 +1,8 @@
 package view.states;
 
-import java.io.IOException;
 import HTTP_Requests.HttpURLConnectionExample;
 
-public class DeleteCarMenuState extends MenuState {
+public class AcceptRequestMenuState extends RequestMenuState {
 	
 	HttpURLConnectionExample http = new HttpURLConnectionExample();
 	@Override
@@ -11,24 +10,24 @@ public class DeleteCarMenuState extends MenuState {
     {
         if (input.equals("back"))
         {
-            currentState = states.get(1);
+            currentState = states.get(5);
             return "";
         }
         
       
         try 
         {
-			http.deleteCar(input);
-		} catch (IOException e) 
+			http.acceptRequest(input);
+		} catch (Exception e) 
         {
 			e.printStackTrace();
 		}
-        return "CAR WAS REMOVED SUCCESSFULLY TO THE SYSTEM!";
+        return "";
     }
 
 	@Override
 	public String init() {
-		return "Enter car registration number:";
+		return "Enter SSN from the request: ";
 	}
 
 }
