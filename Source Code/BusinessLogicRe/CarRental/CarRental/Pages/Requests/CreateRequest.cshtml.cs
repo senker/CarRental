@@ -45,8 +45,8 @@ namespace CarRental.Pages.Requests
             CarFromDb.fuelType = Car.fuelType;
             CarFromDb.carColor = Car.carColor;
             CarFromDb.carDescription = Car.carDescription;
-            CarFromDb.carPrice = Car.carPrice;
-            CarFromDb.carDeposit = Car.carDeposit;
+            //CarFromDb.carPrice = Car.carPrice;
+            //CarFromDb.carDeposit = Car.carDeposit;
             Customer.requestedCar = Car.registrationNumber;
             _db.Customer.Add(Customer);
 

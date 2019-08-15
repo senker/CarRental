@@ -33,6 +33,13 @@ namespace CarRental.Model
         [Required]
         [Display(Name = "Driver License ID")]
         public string driverLicenseId { get; set; }
+        [Required]
+        [Display(Name = "Start date")]
+        public DateTime startDate { get; set; }
+        [Required]
+        [Display(Name ="End date")]
+        public DateTime endDate { get; set; }
+        public string requestState { get; set; } = "pending";
         public string requestedCar { get; set; }
 
     }

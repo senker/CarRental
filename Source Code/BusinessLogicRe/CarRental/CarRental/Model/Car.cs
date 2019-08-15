@@ -45,6 +45,5 @@ namespace CarRental.Model
         [Required]
         [Display(Name = "Car Deposit")]
         public float carDeposit { get; set; }
-        public Boolean available { get; set; }
     }
 }

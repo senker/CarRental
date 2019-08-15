@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarRental.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190814172910_AddCustomerToDb")]
-    partial class AddCustomerToDb
+    [Migration("20190815123116_AddCarCustomerRequestToDb")]
+    partial class AddCarCustomerRequestToDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,8 +25,6 @@ namespace CarRental.Migrations
                 {
                     b.Property<string>("registrationNumber")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<bool>("available");
 
                     b.Property<string>("carBrand")
                         .IsRequired();
@@ -77,6 +75,8 @@ namespace CarRental.Migrations
                     b.Property<string>("driverLicenseId")
                         .IsRequired();
 
+                    b.Property<DateTime>("endDate");
+
                     b.Property<string>("firstName")
                         .IsRequired();
 
@@ -89,7 +89,11 @@ namespace CarRental.Migrations
                     b.Property<string>("phoneNumber")
                         .IsRequired();
 
+                    b.Property<string>("requestState");
+
                     b.Property<string>("requestedCar");
+
+                    b.Property<DateTime>("startDate");
 
                     b.HasKey("socialSecurityNumber");
 

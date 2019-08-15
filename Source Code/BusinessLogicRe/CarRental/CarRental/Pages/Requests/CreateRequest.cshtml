@@ -30,6 +30,7 @@
                     <div class="col-sm-4">
                         <input asp-for="Customer.socialSecurityNumber" class="form-control" />
                     </div>
+                    <span asp-validation-for="Customer.socialSecurityNumber"></span>
                 </div>
             </div>
             <div class="form-group">
@@ -40,6 +41,7 @@
                     <div class="col-sm-4">
                         <input asp-for="Customer.firstName" class="form-control" />
                     </div>
+                    <span asp-validation-for="Customer.firstName"></span>
                 </div>
             </div>
             <div class="form-group">
@@ -50,6 +52,7 @@
                     <div class="col-sm-4">
                         <input asp-for="Customer.lastName" class="form-control" />
                     </div>
+                    <span asp-validation-for="Customer.lastName"></span>
                 </div>
             </div>
             <div class="form-group">
@@ -60,6 +63,7 @@
                     <div class="col-sm-4">
                         <input asp-for="Customer.dateOfBirth" class="form-control" />
                     </div>
+                    <span asp-validation-for="Customer.dateOfBirth"></span>
                 </div>
             </div>
             <div class="form-group">
@@ -70,6 +74,7 @@
                     <div class="col-sm-4">
                         <input asp-for="Customer.address" class="form-control" />
                     </div>
+                    <span asp-validation-for="Customer.address"></span>
                 </div>
             </div>
             <div class="form-group">
@@ -80,6 +85,7 @@
                     <div class="col-sm-4">
                         <input asp-for="Customer.phoneNumber" class="form-control" />
                     </div>
+                    <span asp-validation-for="Customer.phoneNumber"></span>
                 </div>
             </div>
             <div class="form-group">
@@ -90,6 +96,7 @@
                     <div class="col-sm-4">
                         <input asp-for="Customer.nationality" class="form-control" />
                     </div>
+                    <span asp-validation-for="Customer.nationality"></span>
                 </div>
             </div>
             <div class="form-group">
@@ -100,6 +107,29 @@
                     <div class="col-sm-4">
                         <input asp-for="Customer.driverLicenseId" class="form-control" />
                     </div>
+                    <span asp-validation-for="Customer.driverLicenseId"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="Customer.startDate"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Customer.startDate" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Customer.startDate"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="Customer.endDate"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Customer.endDate" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Customer.endDate"></span>
                 </div>
             </div>
             <div class="form-group">
@@ -113,6 +143,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="form-group">
                 <div class="row">
                     <div class="col-sm-2 offset-sm-2">
@@ -128,3 +159,7 @@
         </div>
     </form>
 </div>
+
+@section Scripts{ 
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
